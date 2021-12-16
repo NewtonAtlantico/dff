@@ -1,4 +1,6 @@
 import styled from 'styled-components';
-import { TextField } from '@mui/material';
 
-export const StyledInput = styled(TextField)``;
+export const StyledInput = styled.input`
+    margin-bottom: 1rem;
+`;
+export const StyledLabel = styled.label``;

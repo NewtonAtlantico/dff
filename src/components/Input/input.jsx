@@ -1,10 +1,16 @@
 import React from 'react';
-import {StyledInput} from './input-styles';
+import {StyledInput, StyledLabel} from './input-styles';
 
-export default ({onChange, value, label}) => (
-    <StyledInput 
-        value={value}
-        onChange={onChange}
-        label={label}
-    />
+const Input = ({onChange, value, label, fieldRef, type}) => (
+    <div>
+        <StyledLabel>{label}</StyledLabel><br/>
+        <StyledInput 
+            value={value}
+            onChange={onChange}
+            ref={fieldRef}
+            type={type}
+        />
+    </div>
 )
+
+export default Input;

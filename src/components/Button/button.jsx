@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyledButton } from './button-styles';
 
-export default ({ onClick, children }) => (
-    <StyledButton onClick={onClick}>
+const Button =  ({ onClick, children, type }) => (
+    <StyledButton onClick={onClick} type={type}>
         {children}
     </StyledButton>
 )
+
+export default Button;
