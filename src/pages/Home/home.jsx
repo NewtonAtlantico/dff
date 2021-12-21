@@ -2,7 +2,7 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import {Box, Drawer as MuiDrawer, List, ListItem, ListItemIcon, ListItemText, Tooltip, Menu, MenuItem} from '@mui/material';
 import { Dashboard } from '@mui/icons-material';
-import {useParams} from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
 import DashboardComponent from '../Dashboard';
 
 const drawerWidth = 240;
@@ -49,6 +49,7 @@ export default function MiniDrawer() {
   const [open, setOpen] = React.useState(false);
   const [openMenu, setOpenMenu] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleClose = () => {
     setOpenMenu(false);
@@ -56,6 +57,10 @@ export default function MiniDrawer() {
 
   const params = useParams();
   console.log('params', params)
+
+  const handleSelectDashboard = (dashboardName) => {
+    navigate(`/dashboards/${dashboardName}`)
+  }
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -85,10 +90,10 @@ export default function MiniDrawer() {
             'aria-labelledby': 'basic-button',
           }}
       >
-          <MenuItem onClick={handleClose}>Deck</MenuItem>
-          <MenuItem onClick={handleClose}>Misc Charts</MenuItem>
-          <MenuItem onClick={handleClose}>USA Birth Names</MenuItem>
-          <MenuItem onClick={handleClose}>World Banks Data</MenuItem>
+          <MenuItem onClick={() => handleSelectDashboard('deck')}>Deck</MenuItem>
+          <MenuItem onClick={() => handleSelectDashboard('misc_charts')}>Misc Charts</MenuItem>
+          <MenuItem onClick={() => handleSelectDashboard('births')}>USA Birth Names</MenuItem>
+          <MenuItem onClick={() => handleSelectDashboard('world_health')}>World Banks Data</MenuItem>
       </Menu>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
