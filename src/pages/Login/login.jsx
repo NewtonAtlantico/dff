@@ -21,7 +21,7 @@ const Login = () => {
         const username = userNameRef.current.value;
         const password = passwordRef.current.value;
 
-        if (validateAuth(username, password)) navigate('/dashboards')
+        if (validateAuth(username, password)) navigate('/dashboards/1')
     }
 
     return (

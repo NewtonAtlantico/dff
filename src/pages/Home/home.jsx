@@ -90,10 +90,7 @@ export default function MiniDrawer() {
             'aria-labelledby': 'basic-button',
           }}
       >
-          <MenuItem onClick={() => handleSelectDashboard('deck')}>Deck</MenuItem>
-          <MenuItem onClick={() => handleSelectDashboard('misc_charts')}>Misc Charts</MenuItem>
-          <MenuItem onClick={() => handleSelectDashboard('births')}>USA Birth Names</MenuItem>
-          <MenuItem onClick={() => handleSelectDashboard('world_health')}>World Banks Data</MenuItem>
+          <MenuItem onClick={() => handleSelectDashboard('1')}>Beltrano Dashboard</MenuItem>
       </Menu>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
