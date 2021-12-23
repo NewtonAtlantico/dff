@@ -91,6 +91,7 @@ export default function MiniDrawer() {
           }}
       >
           <MenuItem onClick={() => handleSelectDashboard('1')}>Beltrano Dashboard</MenuItem>
+          <MenuItem onClick={() => handleSelectDashboard('2')}>Beltrano ML Analysis</MenuItem>
       </Menu>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
